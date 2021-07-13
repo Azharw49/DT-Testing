@@ -32,7 +32,7 @@ public class CucumberHooks {
             scenario.attach(this.screenshotService.getScreenshot(), "image/png", scenario.getName());
             }else 
             {
-            	LOG.error("Scenario : {} is passed",scenario.getName());
+            	LOG.info("Scenario : {} is passed",scenario.getName());
                 scenario.attach(this.screenshotService.getScreenshot(), "image/png", scenario.getName());
             }
         }
