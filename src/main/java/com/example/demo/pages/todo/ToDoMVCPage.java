@@ -4,6 +4,7 @@ import javax.annotation.PostConstruct;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.SessionId;
@@ -90,6 +91,22 @@ public class ToDoMVCPage extends Base{
 		this.textarea.sendKeys(Keys.ENTER);
 		LOG.info("Entered the task : {}", toDoTask);
 		this.wait.until(d -> this.getexistingTaskCount()> taskCount);
+	}
+	
+	public String getFilterButton(String filterName)
+	{
+		try
+		{
+		return this.driver.findElement(By.linkText(filterName)).getText();
+		}catch (NoSuchElementException  e)
+		{
+			LOG.error("filter {} does not exist . Rerurning null string",filterName);
+			return "";
+		}catch (Exception  e)
+		{
+			LOG.error("Exception occured.Retruning null string : {}",e.toString());
+			return "";
+		}
 	}
 
 	@Override

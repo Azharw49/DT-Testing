@@ -1,5 +1,5 @@
 Feature: Task Management in todos
-@todos
+@flow
   Scenario Outline: Verify adding tasks to the todos
     Given I am on todos home page
     When I enter "<task>" as a keyword
@@ -13,10 +13,10 @@ Feature: Task Management in todos
       | Learn Cucumber       | 
       
       
-@todos     
+@flow     
    Scenario: Verify the number  
      Given I am on todos home page
-     When I enter "Playing football" as a keyword
+     When I enter "Learn Python" as a keyword
      And I delete the same task
      Then I should not be able to see the task entered
     

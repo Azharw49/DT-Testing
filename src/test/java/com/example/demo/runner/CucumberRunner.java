@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.runner;
 
 import org.testng.annotations.DataProvider;
 
@@ -12,7 +12,7 @@ import io.cucumber.testng.CucumberOptions;
 		,glue = "com.example.demo.bdd"
 		,plugin = {"pretty" ,"json:target/cucumber.json" , "html:target/cucumberreport.html"}
 		,monochrome = true,dryRun = false
-		,tags="@todos"		
+		//,tags="@filterbutton"		
 		)
 public class CucumberRunner extends AbstractTestNGCucumberTests{
 

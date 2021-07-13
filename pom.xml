@@ -107,7 +107,7 @@
 					</properties>
 					<testFailureIgnore>true</testFailureIgnore>
 					<includes>
-						<include>com.example.demo.CucumberRunner</include>
+						<include>com.example.demo.runner.CucumberRunner</include>
 					</includes>
 				</configuration>
 			</plugin>
