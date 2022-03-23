@@ -26,41 +26,16 @@ public class WebDriverConfig {
 	@ConditionalOnProperty(name = "browser" , havingValue = "firefox")
 	public WebDriver firefoxDriver()
 	{
-		WebDriverManager.firefoxdriver().version("0.29.1").setup();
-		WebDriver driver = new FirefoxDriver();
-		//Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
-		Runtime.getRuntime().addShutdownHook(new Thread()
-		{
-			public void run()
-			{
-				LOG.info("opening reports...............");
-				((JavascriptExecutor) driver).executeScript("window.open()");
-				ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-				driver.switchTo().window(tabs.get(1));
-				driver.get(System.getProperty("user.dir") + "/target/cucumber-report-html/cucumber-html-reports/feature-overview.html");
-			}});
-		return driver;
+		WebDriverManager.firefoxdriver().driverVersion("0.30.0").setup();
+		return new FirefoxDriver();
 	}
 
 	@Bean
 	@ConditionalOnMissingBean
 	public WebDriver chromeDriver()
 	{
-		WebDriverManager.chromedriver().version("90.0.4430.24").setup();
-		WebDriver driver = new ChromeDriver();
-		//Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
-		Runtime.getRuntime().addShutdownHook(new Thread()
-		{
-			public void run()
-			{
-				LOG.info("opening reports...............");
-				((JavascriptExecutor) driver).executeScript("window.open()");
-				ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-				driver.switchTo().window(tabs.get(1));
-				driver.get(System.getProperty("user.dir") + "/target/cucumberreport.html");
-				driver.navigate().refresh();
-			}});
-		return driver;
+		WebDriverManager.chromedriver().driverVersion("98.0.4758.102").setup();
+		return new ChromeDriver();
 	}
 
 

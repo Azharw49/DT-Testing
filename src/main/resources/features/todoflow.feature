@@ -9,8 +9,8 @@ Feature: Task Management in todos
     Examples: 
       | task                 | 
       | Learn Selenium       |   
-      | Learn Java           |  
-      | Learn Cucumber       | 
+      | a1phite123           |
+      | @#%^*(*())((**       |
       
       
 @flow     
@@ -18,5 +18,5 @@ Feature: Task Management in todos
      Given I am on todos home page
      When I enter "Learn Python" as a keyword
      And I delete the same task
-     Then I should not be able to see the task entered
+     Then I should be able to see the task Count as 0
     
