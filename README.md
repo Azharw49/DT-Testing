@@ -13,4 +13,4 @@ Another approach (Applicable for Windows): Run the run.bat file inside the root 
 
 The project contains 2 feature files on which todoflow.feature and todobuttons.feature. The cucumber report generated will give a detailed view of the run.
 
-ChromeDriver Versiob
+Chrome Version : 98.0.4758.102
