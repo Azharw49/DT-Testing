@@ -7,6 +7,6 @@ Feature: Validate Filter buttons in todos
      Then I should  be able to see the filters
      | Filters   |
      | All       |
-     | Actives    |
-     | Completeds |
+     | Active    |
+     | Completed |
       

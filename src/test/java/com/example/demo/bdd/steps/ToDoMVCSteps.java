@@ -22,6 +22,7 @@ import io.cucumber.spring.CucumberContextConfiguration;
 public class ToDoMVCSteps {
 	
 	String taskName = "";
+
 	
 	@LazyAutowired
     private ToDoMVCPage todosPage;
@@ -46,9 +47,10 @@ public class ToDoMVCSteps {
 	public void deleteSameTask() {
 		todosPage.deleteLatestTaskAdded();
 	}
-	@Then("I should not be able to see the task entered")
-	public void verifyTaskDeletion() {
-		Assert.assertNotEquals(todosPage.getNewTaskAdded(), taskName);
+	@Then("I should be able to see the task Count as 0")
+	public void verifyTaskDeletion() throws InterruptedException {
+		Thread.sleep(1000);
+		Assert.assertEquals(todosPage.getexistingTaskCount(),0);
 	}
 	
 	@Then("I should  be able to see the filters")
