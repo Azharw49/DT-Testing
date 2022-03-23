@@ -34,7 +34,7 @@ public class WebDriverConfig {
 	@ConditionalOnMissingBean
 	public WebDriver chromeDriver()
 	{
-		WebDriverManager.chromedriver().driverVersion("98.0.4758.102").setup();
+		WebDriverManager.chromedriver().driverVersion("99.0.4844.82").setup();
 		return new ChromeDriver();
 	}
 
